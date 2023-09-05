@@ -1,1 +1,1 @@
-# InstallPrometheus
+# How to install Prometheus Client
