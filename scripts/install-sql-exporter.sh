@@ -14,7 +14,7 @@ mysql -u root -p
 
 # The user should have PROCESS, SELECT, REPLICATION CLIENT grants:
 
-CREATE USER 'mysqld_exporter'@'localhost' IDENTIFIED BY 'StrongPassword';
+CREATE USER 'mysqld_exporter'@'localhost' IDENTIFIED BY '5BSAvzaKmTttTUif';
 GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'mysqld_exporter'@'localhost';
 FLUSH PRIVILEGES;
 EXIT
@@ -23,7 +23,7 @@ EXIT
 
 echo '[client]
 user=mysqld_exporter
-password=StrongPassword' > /etc/.mysqld_exporter.cnf
+password=5BSAvzaKmTttTUif' > /etc/.mysqld_exporter.cnf
 
 # Set ownership permissions:
 sudo chown root:prometheus /etc/.mysqld_exporter.cnf
