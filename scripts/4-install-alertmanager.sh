@@ -80,6 +80,11 @@ receivers:
   - api_url: https://hooks.slack.com/services/XXXXXX/XXXXXX/XXXXXX
     channel: '#prometheus-course'
     send_resolved: true
+  telegram_configs:
+  - bot_token: 6610952238:AAGm5oIqkfZbRmB8-paUVHtSh9RtjY5gbcA
+    api_url: https://api.telegram.org
+    chat_id: -951937541
+    parse_mode: ''
  "
 
   echo "(2/2)Setup complete.
