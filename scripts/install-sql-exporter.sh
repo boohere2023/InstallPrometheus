@@ -16,8 +16,11 @@ echo "Note: password will be hidden when typing"
 # The user should have PROCESS, SELECT, REPLICATION CLIENT grants:
 read -sp rootpasswd
 mysql -u root -p${rootpasswd} - e "CREATE USER 'mysqld_exporter'@'localhost' IDENTIFIED BY '5BSAvzaKmTttTUif';"
+echo "User successfully created!"
 mysql -u root -p${rootpasswd} - e "GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'mysqld_exporter'@'localhost';"
 mysql -u root -p${rootpasswd} - e "FLUSH PRIVILEGES;"
+echo "You're good now :)"
+exit
 
 
 # Create database credentials file with correct username and password for user create
