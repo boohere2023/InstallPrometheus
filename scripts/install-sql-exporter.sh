@@ -10,17 +10,15 @@ sudo mv  mysqld_exporter-*.linux-amd64/mysqld_exporter /usr/local/bin/
 sudo chmod +x /usr/local/bin/mysqld_exporter
 
 # Create Prometheus exporter database user
-echo "Please enter root user MySQL password!"
-echo "Note: password will be hidden when typing"
+
+mysql -u root -p e9e0ecad8d5bf83a -e "CREATE USER 'mysqld_exporter'@'localhost' IDENTIFIED BY '5BSAvzaKmTttTUif';"
 
 # The user should have PROCESS, SELECT, REPLICATION CLIENT grants:
 
-mysql -uroot -p$e9e0ecad8d5bf83a
-CREATE USER 'mysqld_exporter'@'localhost' IDENTIFIED BY '5BSAvzaKmTttTUif';
-GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'mysqld_exporter'@'localhost';
-FLUSH PRIVILEGES;
-EXIT
-echo "You're good now :)"
+mysql -u root -p e9e0ecad8d5bf83a -e "GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'mysqld_exporter'@'localhost';"
+mysql -u root -p e9e0ecad8d5bf83a -e "FLUSH PRIVILEGES;"
+
+
 
 
 # Create database credentials file with correct username and password for user create
@@ -69,3 +67,5 @@ WantedBy=multi-user.target' > /etc/systemd/system/mysql_exporter.service
 sudo systemctl daemon-reload
 sudo systemctl enable mysql_exporter
 sudo systemctl start mysql_exporter
+
+echo "You're good now :)"
