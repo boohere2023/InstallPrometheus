@@ -14,10 +14,10 @@ mysql -u root -p
 
 # The user should have PROCESS, SELECT, REPLICATION CLIENT grants:
 
-CREATE USER 'mysqld_exporter'@'localhost' IDENTIFIED BY '5BSAvzaKmTttTUif';
-GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'mysqld_exporter'@'localhost';
-FLUSH PRIVILEGES;
-EXIT
+mysql - e "CREATE USER 'mysqld_exporter'@'localhost' IDENTIFIED BY '5BSAvzaKmTttTUif';"
+mysql - e "GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'mysqld_exporter'@'localhost';"
+mysql - e "FLUSH PRIVILEGES;"
+mysql - e "EXIT"
 
 # Create database credentials file with correct username and password for user create
 
