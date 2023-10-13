@@ -11,7 +11,7 @@ sudo chmod +x /usr/local/bin/mysqld_exporter
 
 # Create Prometheus exporter database user
 
-mysql -uroot -p7a14ee331977f804 -e "CREATE USER 'mysqld_exporter'@'localhost' IDENTIFIED BY '5BSAvzaKmTttTUif';"
+mysql -uroot -pc71086c0f3577903 -e "CREATE USER 'mysqld_exporter'@'localhost' IDENTIFIED BY '5BSAvzaKmTttTUif';"
 
 # The user should have PROCESS, SELECT, REPLICATION CLIENT grants:
 
