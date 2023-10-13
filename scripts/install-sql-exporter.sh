@@ -15,8 +15,8 @@ mysql -uroot -pc71086c0f3577903 -e "CREATE USER 'mysqld_exporter'@'localhost' ID
 
 # The user should have PROCESS, SELECT, REPLICATION CLIENT grants:
 
-mysql -uroot -p7a14ee331977f804 -e "GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'mysqld_exporter'@'localhost';"
-mysql -uroot -p7a14ee331977f804 -e "FLUSH PRIVILEGES;"
+mysql -uroot -pc71086c0f3577903 -e "GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'mysqld_exporter'@'localhost';"
+mysql -uroot -pc71086c0f3577903 -e "FLUSH PRIVILEGES;"
 
 
 
